@@ -19,11 +19,11 @@ class ReportRepository extends BaseRepository implements ReportRepositoryContrac
 {
     protected $model = Report::class;
 
-    public function allByType($type = 'List')
+    public function allByType($type = 'Line')
     {
         $query = $this->newQuery();
         
-        $query->where('type', '=', 'List');
+        $query->where('type', '=', 'Line');
 
         return $query->get();
     }
@@ -40,7 +40,7 @@ class ReportRepository extends BaseRepository implements ReportRepositoryContrac
     public function getTypes()
     {
         return [
-            'List', 'Chart', 'Pie', 'Bar'
+            'Line', 'Chart', 'Pie', 'Bar'
         ];
     }
 }

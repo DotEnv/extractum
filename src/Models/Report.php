@@ -42,6 +42,6 @@ class Report extends Model
      * @var array
      */
     protected $casts = [
-        'configuration' => 'json'
+        'configuration' => 'collection'
     ];
 }

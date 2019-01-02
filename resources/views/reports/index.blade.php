@@ -8,7 +8,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">Reports
                 <div class="pull-right">
-                    <button type="button" class="btn btn-primary btn-xs">Add New</button>
+                    <a href="{{ config('routes.route_name', 'reports') . '/create' }}" class="btn btn-primary btn-xs">Add New</a>
                 </div>        
             </div>
             <div class="panel-body">

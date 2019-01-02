@@ -19,7 +19,7 @@ class CreateReportsTable extends Migration
             $table->text('description');
             $table->string('table', 50);
             $table->text('configuration');
-            $table->enum('type', ['List', 'Chart', 'Pie', 'Bar'])->default('List');
+            $table->enum('type', ['Line', 'Chart', 'Pie', 'Bar'])->default('Line');
             $table->tinyInteger('order')->default(0);
             $table->timestamps();
             $table->softDeletes();

@@ -46,7 +46,7 @@ class ReportController extends Controller
     {
         $reports = $this->repository->getAll();
     
-        return view('report::index', compact('reports'));
+        return view('report::reports.index', compact('reports'));
     }
 
     /**
@@ -61,7 +61,7 @@ class ReportController extends Controller
             'users', 
         ];
 
-        return view('report::create', compact('types', 'tables'));
+        return view('report::reports.create', compact('types', 'tables'));
     }
 
     /**
@@ -76,7 +76,7 @@ class ReportController extends Controller
 
         dd('asd', $request->all());
 
-        $this->repository->craete($request->all());
+        $this->repository->create($request->all());
     }
 
     /**
@@ -89,7 +89,7 @@ class ReportController extends Controller
         $report = $this->repository->findByID($id);
         $types  = $this->repository->getTypes();
 
-        return view('report::edit', compact('report', 'types'));
+        return view('report::reports.edit', compact('report', 'types'));
     }
 
     /**
@@ -104,7 +104,8 @@ class ReportController extends Controller
             'title'         => 'required|max:100',
             'description'   => 'required|max:500',
             'configuration' => 'required',
-            'type'          => 'required|in:List,Chart,Bar,Pie',
+            'table'         => 'required|max:50',
+            'type'          => 'required|in:Line,Chart,Bar,Pie',
         ];
         
         return Validator::make($data, $rules);

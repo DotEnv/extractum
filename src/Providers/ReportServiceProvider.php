@@ -44,9 +44,14 @@ class ReportServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'report');
 
         /**
-         * Load database migrations
+         * Publihsed database migrations
          */
         $this->publishes([__DIR__.'/../../database/migrations/' => base_path('database/migrations')], 'migrations');
+
+        /**
+         * Publised views
+         */
+        $this->publishes([__DIR__.'/../../resources/views/' => base_path('resources/views')], 'views');
     }
     
     /**
