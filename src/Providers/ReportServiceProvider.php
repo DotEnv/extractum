@@ -44,6 +44,17 @@ class ReportServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'report');
 
         /**
+         * Publises config file
+         */
+
+        $this->publishes([__DIR__.'/../../config/report.php' => config_path('report.php')], 'config');
+
+        /**
+         * Merge config file
+         */
+        $this->mergeConfigFrom(__DIR__.'/../../config/report.php', 'report');
+
+        /**
          * Publihsed database migrations
          */
         $this->publishes([__DIR__.'/../../database/migrations/' => base_path('database/migrations')], 'migrations');

@@ -14,6 +14,10 @@ return [
     /**
      * Default route name
      */
+    'route_name' => 'reports',
 
-    'route_name' => 'reports'
+    /**
+     * Default table name
+     */
+    'table_name' => 'reports'
 ];

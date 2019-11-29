@@ -43,7 +43,7 @@ class ReportController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
-    {
+    { 
         $reports = $this->repository->getAll();
     
         return view('report::reports.index', compact('reports'));
